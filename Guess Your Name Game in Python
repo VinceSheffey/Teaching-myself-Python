@@ -1,0 +1,72 @@
+# Guess The Number Game
+# By Vince
+import sys, random 
+
+def game():
+      r= random.randint(1,20)
+      print('Ok, you only get three guesses.')
+      count= 1 
+      while (count < 5):
+          
+        print (' Guess the number: ')
+        number = int(input())
+      
+        if count == 3: 
+              count =1000
+              print('You lose! You are dumb!! ಠ_ಠ')
+              break;
+              
+        elif number > r :
+            print("Your guess is too large. Try again. ")
+            count+=1
+              
+        elif number < r:
+              print("Your guess is too small. Try again.")
+              count+=1
+      
+        else:
+              count=1000
+              print("Congratulations you guessed it. It only took you ", count, " tries! \(^_^)/   ")
+              
+              
+      print(' The Number was ' , r)
+      global playagain
+      print ("Would you like to play gain")
+      playagain =input(' ⊙▃⊙    :')
+      
+
+print( 'Hows it going. What is your name? ')
+
+name = input()
+
+print('Nice to meet you, '+name +' . Would you like to play a game? ¯\_(ツ)_/¯')
+
+
+check = True
+
+while check == True :
+    answer = input()
+    if answer == 'yes':
+            check = False
+            print("Cool! I'm thinking of a number between 1-20. Can you guess it? ")
+    elif answer == 'no' :
+            print("Have a nice day!")
+            sys.exit()
+    else:
+            print("I don't understand. Please enter a different response: ")
+
+
+game()
+
+while playagain == 'yes':
+      game()
+      
+
+
+
+
+
+
+
+
+
