@@ -1,0 +1,41 @@
+import random
+# Magic8BallProgram
+
+# Construct a program to throw out a random response to yes or no question
+
+
+
+
+messages =[
+  "Yes, in due time.",
+  "My sources say no.",
+    "Definitely not. ",
+   " Yes. ",
+   " You will have to wait. ",
+   " I have my doubts. ",
+    " Outlook so so. ",
+    " Looks good to me! ",
+    " Who knows? ",
+    " Looking good!",
+    " Probably. "
+    " Are you kidding? ",
+    "Go for it! ",
+     "Don't bet on it. ",
+    "Forget about it."
+    ]
+r = random.randint(0,len(messages)-1)
+print("If you have a yes or no question, than I have the answer. Don't believe me? Just think one up and press enter for my answer.")
+response = input()
+if response == "":
+  print(messages[r])
+
+response2=""
+while response2== "": 
+  print('Press enter to play again: ')
+  response2 =input()
+  if response2 == "":
+    r = random.randint(0,len(messages)-1)
+    print(messages[r])
+  else:
+    break;
+    break;
