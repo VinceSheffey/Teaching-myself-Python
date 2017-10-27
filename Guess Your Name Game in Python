@@ -46,7 +46,7 @@ check = True
 
 while check == True :
     answer = input()
-    if answer == 'yes':
+    if answer.lower() == 'yes':
             check = False
             print("Cool! I'm thinking of a number between 1-20. Can you guess it? ")
     elif answer == 'no' :
