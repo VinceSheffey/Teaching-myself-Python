@@ -1,0 +1,28 @@
+# forward propogation
+# apply a set of weights to the input data and calculate an output
+import numpy as np #
+#orignal value of data for node 0 and 1
+input_data = np.array([2,3])
+
+#weights dictionary holds the values of the weights for node 1 0 and output
+weights = {'node_0': np.array([1,1]),
+          'node_1' : np.array([-1,1]),
+          'output': np.array([2,-1])}
+
+#computation: 2x1 , 3x1 sum adds value together to get sum which is 5
+node_0_value = (input_data * weights['node_0']).sum()
+#computation: 2x-1, 3x1 sum adds value together to get sum which is 1
+node_1_value = (input_data * weights['node_1']).sum()
+
+# hidden layer values 
+hidden_layer_values = np.array([node_0_value, node_1_value])
+
+print(hidden_layer_values)
+
+# computate hidden_layer_values * weights
+output = (hidden_layer_values * weights['output']).sum()
+
+#Solution
+print(output)
+
+
