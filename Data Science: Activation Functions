@@ -30,3 +30,6 @@ model_output = (hidden_layer_outputs * weights['output']).sum()
 
 # Print model output
 print(model_output)
+
+"""Using the past data the model predicts 9 transactions.
+Without this activation function, it is possible to have predicted a negative number!""" 
