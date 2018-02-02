@@ -5,16 +5,16 @@ import sys, random
 def game():
       r= random.randint(1,20)
       print('Ok, you only get three guesses.')
-      count= 1 
-      while (count < 5):
+      count= 0 
+      while (count < 3):
           
         print (' Guess the number: ')
         number = int(input())
       
-        if count == 3: 
-              count =1000
-              print('You lose! You are dumb!! ಠ_ಠ')
-              break;
+        if number == r: 
+              count+=1
+              print("Congratulations you guessed it. It only took you ", count, " tries! \(^_^)/   ")
+              count=1000;
               
         elif number > r :
             print("Your guess is too large. Try again. ")
@@ -23,10 +23,15 @@ def game():
         elif number < r:
               print("Your guess is too small. Try again.")
               count+=1
-      
-        else:
-              count=1000
-              print("Congratulations you guessed it. It only took you ", count, " tries! \(^_^)/   ")
+              
+        
+             
+      if count==3:
+          count = 1000
+          print('You lose! You are dumb!! ಠ_ಠ')
+          
+        
+              
               
               
       print(' The Number was ' , r)
@@ -61,12 +66,4 @@ game()
 while playagain == 'yes':
       game()
       
-
-
-
-
-
-
-
-
 
